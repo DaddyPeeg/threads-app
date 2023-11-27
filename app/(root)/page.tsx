@@ -5,8 +5,10 @@ import { fetchPost } from "@/lib/actions/thread.actions";
 import { currentUser } from "@clerk/nextjs";
 
 export default async function Home() {
-  const result = await fetchPost(1, 30);
   const user = await currentUser();
+  if (!user) return <div>wew</div>;
+
+  const result = await fetchPost(1, 30);
 
   return (
     <>
