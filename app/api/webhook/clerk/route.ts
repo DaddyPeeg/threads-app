@@ -183,6 +183,7 @@ export const POST = async (request: Request) => {
 
   // Listen organization deletion event
   if (eventType === "organization.deleted") {
+    console.log(process.env.NEXT_CLERK_WEBHOOK_SECRET);
     try {
       // Resource: https://clerk.com/docs/reference/backend-api/tag/Organizations#operation/DeleteOrganization
       // Show what evnt?.data sends from above resource
